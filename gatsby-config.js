@@ -83,6 +83,7 @@ module.exports = {
         socialLogins: ["google", "twitter", "facebook", "github"],
       },
     },
+    "gatsby-plugin-theme-ui",
     {
       resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
       options: {

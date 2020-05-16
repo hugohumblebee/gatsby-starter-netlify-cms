@@ -7,6 +7,8 @@ import BlogPostPreview from "./preview-templates/BlogPostPreview";
 import ProductPagePreview from "./preview-templates/ProductPagePreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
 import NewPagePreview from "./preview-templates/NewPagePreview";
+import Pricing from "../components/Pricing";
+import PricingPreview from "./preview-templates/PricingPreview";
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -17,31 +19,4 @@ CMS.registerPreviewTemplate("products", ProductPagePreview);
 CMS.registerPreviewTemplate("blog", BlogPostPreview);
 CMS.registerPreviewTemplate("customs", NewPagePreview);
 
-var CategoriesControl = createClass({
-  handleChange: function (e) {
-    this.props.onChange(e.target.value.split(",").map((e) => e.trim()));
-  },
-
-  render: function () {
-    var value = this.props.value;
-    return h("input", {
-      type: "text",
-      value: value ? value.join(", ") : "",
-      onChange: this.handleChange,
-    });
-  },
-});
-
-var CategoriesPreview = createClass({
-  render: function () {
-    return h(
-      "ul",
-      {},
-      this.props.value.map(function (val, index) {
-        return h("li", { key: index }, val);
-      })
-    );
-  },
-});
-
-CMS.registerWidget("categories", CategoriesControl, CategoriesPreview);
+CMS.registerWidget("pricing", Pricing, PricingPreview);
