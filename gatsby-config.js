@@ -66,6 +66,21 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyADHA4HvLXLHcGp-eaquZXqAAC7mJJujK4",
+          authDomain: "dinhundras-f4aae.firebaseapp.com",
+          databaseURL: "https://dinhundras-f4aae.firebaseio.com",
+          projectId: "dinhundras-f4aae",
+          storageBucket: "dinhundras-f4aae.appspot.com",
+          messagingSenderId: "580839297390",
+          appId: "1:580839297390:web:34a0dec1aa5342c83ab17f",
+          measurementId: "G-ZNFN2MWMLW"
+        }
+      }
+    },
+    {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
@@ -75,3 +90,6 @@ module.exports = {
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
+
+
+
